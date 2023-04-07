@@ -26,16 +26,13 @@ def switchStatusBox(x, y, board):
     board[x][y] = not board[x][y] 
 
 def actuBoard(realBoard, oldBoard):
-    print("-------ENTORO-----------")
     for x in range(0,NUM_BOX):
         for y in range(0,NUM_BOX):
             if oldBoard[x][y] == 1:
                 if not alive(x,y, oldBoard):
-                    print("alive: x: {}, y:{}".format(x,y))
                     switchStatusBox(x, y, realBoard)
             else:
                 if revive(x,y, oldBoard):
-                    print("revive: x: {}, y:{}".format(x,y))
                     switchStatusBox(x, y, realBoard)
 
 def alive(x, y, board):
